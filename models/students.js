@@ -10,7 +10,7 @@ const findById = id => {
     .first();
 };
 
-const add = cohort => {
+const add = student => {
   return db('students').insert(student);
 };
 
