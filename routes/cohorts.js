@@ -1,7 +1,7 @@
 const express = require('express');
 
 const Cohorts = require('../models/cohorts');
-const { validateCohortId, requiredBody } = require('./middleware');
+const { validateCohortId, requiredBody } = require('../middleware');
 const idBodyCheck = [validateCohortId, requiredBody];
 const cohortsRouter = express.Router();
 
