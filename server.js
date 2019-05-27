@@ -10,6 +10,6 @@ server.use(helmet());
 server.use(logger('dev'));
 server.use(express.json());
 server.use('/api/cohorts', cohortsRouter);
-server.use('/api/cohorts/:id/students', studentRouter);
+server.use('/students', studentRouter);
 
 module.exports = server;

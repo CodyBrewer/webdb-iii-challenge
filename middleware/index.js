@@ -19,12 +19,12 @@ const validateStudentId = async (req, res, next) => {
   try {
     const { id } = req.params;
     const student = await students.findById(id);
-    console.log(student);
     if (student) {
       req.student = student;
       next();
     } else {
       res.status(404).json({ message: 'students not found; invalid id' });
+      console.log(`student is `, student);
     }
   } catch (error) {
     res.status(500).json({ message: 'Failed to process request' });
