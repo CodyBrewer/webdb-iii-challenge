@@ -10,8 +10,8 @@ const findById = id => {
     .first();
 };
 
-const add = zoo => {
-  return db('cohorts').insert(zoo);
+const add = cohort => {
+  return db('cohorts').insert(cohort);
 };
 
 const remove = id => {
