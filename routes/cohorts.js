@@ -1,8 +1,8 @@
 const express = require('express');
 
 const Cohorts = require('./CohortsModel.js');
-const { validatecohortId, requiredBody } = require('./middleware');
-const idBodyCheck = [validatecohortId, requiredBody];
+const { validateCohortId, requiredBody } = require('./middleware');
+const idBodyCheck = [validateCohortId, requiredBody];
 const cohortsRouter = express.Router();
 
 const { find, remove, add, update } = Cohorts;
@@ -24,7 +24,7 @@ cohortsRouter.get('/', async (req, res) => {
   }
 });
 
-cohortsRouter.get('/:id', validatecohortId, async (req, res) => {
+cohortsRouter.get('/:id', validateCohortId, async (req, res) => {
   res.status(200).json(req.cohort);
 });
 
@@ -41,7 +41,7 @@ cohortsRouter.post('/', requiredBody, async (req, res) => {
   }
 });
 
-cohortsRouter.delete('/:id', validatecohortId, async (req, res) => {
+cohortsRouter.delete('/:id', validateCohortId, async (req, res) => {
   try {
     const count = await remove(req.params.id);
     if (count > 0) {
